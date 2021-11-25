@@ -67,19 +67,3 @@ setTime();
 
 
 
-// if(hour >= 0 && hour < 6){
-//     const greeting = document.getElementById("display-greeting");
-//     greeting.innerText = "good night !!";
-// }
-// if(hour >= 6 && hour < 12) {
-//     const greeting = document.getElementById("display-greeting");
-//     greeting.innerText = "good morning !!";
-// }
-// else if(hour >= 12 && hour <= 16) {
-//     const greeting = document.getElementById("display-greeting");
-//     greeting.innerText = "good afternoon !!";
-// }
-// else if(hour >= 16 && hour < 24) {
-//     const greeting = document.getElementById("display-greeting");
-//     greeting.innerText = "good evening !!";
-// }
