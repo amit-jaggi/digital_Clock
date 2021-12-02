@@ -33,7 +33,6 @@ function setTime() {
     let wakeUp = parseInt(document.getElementById("wakeup_time").value);
     let lunch = parseInt(document.getElementById("lunch_time").value);
     let dinner = parseInt(document.getElementById("dinner_time").value);
-
     
     setTimeout(function () {
         var HH = new Date().getHours();
@@ -41,27 +40,43 @@ function setTime() {
         if (wakeUp == HH) {
             document.getElementById("display_image").style.backgroundImage = "url('./assets/wake-up-image.png')";
             document.getElementById("display_text").innerText = "Wake Wake !!";
-            document.getElementById("display_text").style.fontFamily = 'Ubuntu', sans-serif;
+            document.getElementById("display_text").style.fontFamily = 'Ubuntu', 'sans-serif';
         }
         else if (lunch == HH) {
             document.getElementById("display_image").style.backgroundImage = "url('./assets/lunch-image.png')";
             document.getElementById("display_text").innerText = "let's have some lunch!!";
-            document.getElementById("display_text").style.fontFamily = 'Ubuntu', sans-serif;
+            document.getElementById("display_text").style.fontFamily = 'Ubuntu', 'sans-serif';
         }
         else if(dinner == HH) {
             document.getElementById("display_image").style.backgroundImage = "url('./assets/dinner-image.jpg')";
             document.getElementById("display_text").innerText = "Dinner Time !!";
-            document.getElementById("display_text").style.fontFamily = 'Ubuntu', sans-serif;
+            document.getElementById("display_text").style.fontFamily = 'Ubuntu', 'sans-serif';
         }
         else {
             document.getElementById("display_image").style.backgroundImage = "url('./assets/default-image.png')";
             document.getElementById("display_text").innerText = "leisure time !!";
-            document.getElementById("display_text").style.fontFamily = 'Ubuntu', sans-serif;
+            document.getElementById("display_text").style.fontFamily = 'Ubuntu', 'sans-serif';
         }
     }, 1000);
-}
-setTime();
 
+    showSelectedTime();
+}
+
+
+function showSelectedTime() {
+    let container = document.querySelector("#display_greeting");
+    
+    let fetchWakeUp = document.querySelector("#wakeup_time");
+    let wakeUpValue = fetchWakeUp.options[fetchWakeUp.selectedIndex].text;
+    
+    let fetchLunch = document.querySelector("#lunch_time");
+    let lunchValue = fetchLunch.options[fetchLunch.selectedIndex].text;
+
+    let fetchDinner = document.querySelector("#dinner_time");
+    let dinnerValue = fetchDinner.options[fetchDinner.selectedIndex].text;
+
+    container.innerHTML = `<span>WakeUp Time: ${wakeUpValue}</span><span>Lunch Time: ${lunchValue}</span><span>Dinner Time: ${dinnerValue}</span>`;
+}
 
 
 
